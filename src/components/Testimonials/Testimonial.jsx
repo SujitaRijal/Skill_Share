@@ -37,7 +37,7 @@ const Testimonial = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <div className="flex flex-col items-center justify-center w-full px-4 text-purple-500 py-14 md:px-12 lg:px-20 font-poppins">
+    <div className="flex flex-col items-center justify-center w-full px-4 text-purple-500 bg-gray-100 py-14 md:px-12 lg:px-20 font-poppins">
       <h1 className="mb-2 text-2xl font-bold sm:text-4xl">
         What Our{" "}
         <span className="font-light underline underline-offset-4 decoration-1 under">

@@ -7,7 +7,7 @@ import Navbar from "../Navbar/Navbar";
 
 const Hero = () => {
   return (
-    <div className="relative pt-20 pb-16 overflow-hidden sm:pb-24">
+    <div className="relative pb-16 overflow-hidden sm:pb-24">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
           <div className=" sm:text-center lg:flex lg:items-center lg:col-span-6 lg:text-left">
@@ -47,15 +47,17 @@ const Hero = () => {
                 transition={{ duration: 0.7, delay: 0.3 }}
                 className="mt-8 sm:flex sm:justify-center lg:justify-start"
               >
-                <div className="rounded-md shadow">
-                  <Button variant="purple" size="lg" asChild>
-                    <Link to="/signup">Get Started</Link>
-                  </Button>
-                </div>
-                <div className="rounded-md shadow sm:mt-0 sm:ml-3">
-                  <Button variant="outline" size="lg" asChild>
-                    <Link to="/login">Login</Link>
-                  </Button>
+                <div className="flex flex-col sm:flex-row sm:items-center">
+                  <div className="mb-3 rounded-md sm:mb-0">
+                    <Button variant="purple" size="lg" asChild>
+                      <Link to="/signup">Get Started</Link>
+                    </Button>
+                  </div>
+                  <div className="rounded-md sm:ml-3">
+                    <Button variant="outline" size="lg" asChild>
+                      <Link to="/login">Login</Link>
+                    </Button>
+                  </div>
                 </div>
               </motion.div>
             </div>

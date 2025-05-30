@@ -15,7 +15,7 @@ import CountUp from "react-countup";
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
+import { useInView } from "react-intersection-observer";
 const categories = [
   {
     icon: <SearchCheck className="w-8 h-8" />,
@@ -56,9 +56,11 @@ const categories = [
 ];
 
 const Explore = () => {
+  const { ref, inView } = useInView({ triggerOnce: true });
+
   return (
     <div
-      className="flex flex-col items-center justify-center w-full px-4 text-purple-500 bg-gray-100 py-14 md:px-12 lg:px-20 font-poppins"
+      className="flex flex-col items-center justify-center w-full px-4 text-purple-500 py-14 md:px-12 lg:px-20 font-poppins"
       id="Explore"
     >
       <motion.h1
@@ -106,57 +108,36 @@ const Explore = () => {
           </motion.div>
         ))}
       </div>
-      <div className="grid w-full grid-cols-1 gap-10 px-4 mx-auto mt-16 text-center max-w-7xl sm:grid-cols-3">
+
+      <div
+        ref={ref}
+        className="grid w-full grid-cols-1 gap-10 px-4 mx-auto mt-16 text-center max-w-7xl sm:grid-cols-3"
+      >
         <div>
           <h3 className="text-3xl font-bold text-purple-500">
-            <CountUp end={50000} duration={2} separator="," suffix="+" />
+            {inView && (
+              <CountUp end={50000} duration={2} separator="," suffix="+" />
+            )}
           </h3>
           <p className="text-gray-600">Active Learners</p>
         </div>
         <div>
           <h3 className="text-3xl font-bold text-purple-500">
-            <CountUp end={12000} duration={2} separator="," suffix="+" />
+            {inView && (
+              <CountUp end={12000} duration={2} separator="," suffix="+" />
+            )}
           </h3>
           <p className="text-gray-600">Courses Shared</p>
         </div>
         <div>
           <h3 className="text-3xl font-bold text-purple-500">
-            <CountUp end={8000} duration={2} separator="," suffix="+" />
+            {inView && (
+              <CountUp end={8000} duration={2} separator="," suffix="+" />
+            )}
           </h3>
           <p className="text-gray-600">Expert Mentors</p>
         </div>
       </div>
-
-      {/* <div className="max-w-3xl p-10 mt-20 text-center shadow-md bg-purple-50 dark:bg-purple-900/20 rounded-xl">
-          <Sparkles className="w-10 h-10 mx-auto mb-4 text-purple-500" />
-          <p className="text-lg italic text-gray-700 dark:text-gray-300">
-            "Thanks to SkillShare, I transformed from a shy speaker to a
-            confident leader. The community is truly inspiring!"
-          </p>
-          <p className="mt-4 text-sm font-semibold text-purple-600">
-            – Pransh, Developer & Learner
-          </p>
-        </div>
-        <div className="max-w-3xl p-10 mt-20 text-center shadow-md bg-purple-50 dark:bg-purple-900/20 rounded-xl">
-          <Sparkles className="w-10 h-10 mx-auto mb-4 text-purple-500" />
-          <p className="text-lg italic text-gray-700 dark:text-gray-300">
-            "Thanks to SkillShare, I transformed from a shy speaker to a
-            confident leader. The community is truly inspiring!"
-          </p>
-          <p className="mt-4 text-sm font-semibold text-purple-600">
-            – Pransh, Developer & Learner
-          </p>
-        </div>
-        <div className="max-w-3xl p-10 mt-20 text-center shadow-md bg-purple-50 dark:bg-purple-900/20 rounded-xl">
-          <Sparkles className="w-10 h-10 mx-auto mb-4 text-purple-500" />
-          <p className="text-lg italic text-gray-700 dark:text-gray-300">
-            "Thanks to SkillShare, I transformed from a shy speaker to a
-            confident leader. The community is truly inspiring!"
-          </p>
-          <p className="mt-4 text-sm font-semibold text-purple-600">
-            – Pransh, Developer & Learner
-          </p>
-        </div> */}
     </div>
   );
 };

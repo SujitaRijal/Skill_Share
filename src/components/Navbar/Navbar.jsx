@@ -31,7 +31,7 @@ const Navbar = () => {
   }, [location.pathname]);
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`sticky top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-white/90 dark:bg-gray-900/80 backdrop-blur-md shadow-sm"
           : "bg-transparent"
@@ -75,8 +75,24 @@ const Navbar = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <Link
-                to="/Explore"
+                to="/About"
                 className={`text-md font-medium transition-colors hover:text-purple-500  mx-5  ${
+                  location.pathname === "/About"
+                    ? "text-purple-500"
+                    : " text-black"
+                }`}
+              >
+                About
+              </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <Link
+                to="/Explore"
+                className={`text-md font-medium transition-colors hover:text-purple-500  mr-5 ${
                   location.pathname === "/Explore"
                     ? "text-purple-500"
                     : " text-black"
@@ -88,33 +104,34 @@ const Navbar = () => {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <Link
-                to="/MyProfile"
-                className={`text-md font-medium transition-colors hover:text-purple-500  mr-5 ${
-                  location.pathname === "/MyProfile"
-                    ? "text-purple-500"
-                    : " text-black"
-                }`}
-              >
-                My Profile
-              </Link>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <Link
-                to="/MyRequest"
+                to="/Testimonials"
                 className={`text-md font-medium transition-colors hover:text-purple-500  mr-5 ${
-                  location.pathname === "/MyRequest"
+                  location.pathname === "/Testimonials"
                     ? "text-purple-500"
                     : " text-black"
                 }`}
               >
-                My Request
+                Testimonials
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <Link
+                to="/Contact"
+                className={`text-md font-medium transition-colors hover:text-purple-500  mr-5 ${
+                  location.pathname === "/Contact"
+                    ? "text-purple-500"
+                    : " text-black"
+                }`}
+              >
+                Contact
               </Link>
             </motion.div>
           </nav>
@@ -187,27 +204,35 @@ const Navbar = () => {
               Home
             </Link>
             <Link
-              to="/ExploreSkills"
+              to="/About"
               className="block py-2 text-base font-medium hover:text-purple-500 "
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Explore Skills
+              About
             </Link>
 
             <Link
-              to="/MyProfile"
+              to="/Explore"
               className="block py-2 text-base font-medium hover:text-purple-500 "
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              My Profile
+              Explore
             </Link>
 
             <Link
-              to="/MyRequest"
+              to="Testimonials"
               className="block py-2 text-base font-medium hover:text-purple-500 "
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              My Request
+              Testimonials
+            </Link>
+
+            <Link
+              to="Contact"
+              className="block py-2 text-base font-medium hover:text-purple-500 "
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
             </Link>
             <div className="pt-4 space-y-3">
               {isAuthenticated ? (

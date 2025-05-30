@@ -9,6 +9,9 @@ import Login from "./components/Login/Login";
 import Explore from "./components/Explore/Explore";
 import About from "./components/About/About";
 import Testimonial from "./components/Testimonials/Testimonial";
+import Contact from "./components/Contact/contact";
+import Footer from "./components/Footer/Footer";
+import Home from "./components/Home/Home";
 
 const App = () => {
   return (
@@ -17,8 +20,11 @@ const App = () => {
       <Routes>
         {/* //main layout-shows navbar,hero etc */}
         <Route element={<MainLayout />}>
-          <Route path="/" element={<Hero />} />
-          {/* <Route path="/Explore" element={<Explore />} /> */}
+          <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Explore" element={<Explore />} />
+          <Route path="/Testimonials" element={<Testimonial />} />
+          <Route path="/Contact" element={<Contact />} />
         </Route>
 
         <Route element={<AuthLayout />}>
@@ -26,9 +32,6 @@ const App = () => {
           <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
-      <About />
-      <Explore />
-      <Testimonial />
     </>
   );
 };
