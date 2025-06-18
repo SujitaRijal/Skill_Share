@@ -8,7 +8,7 @@ import MainLayout from "./components/HOC/MainLayout";
 import Explore from "./components/Explore/Explore";
 import About from "./components/About/About";
 import Testimonial from "./components/Testimonials/Testimonial";
-import Contact from "./components/Contact/contact";
+import Contact from "./components/Contact/Contact";
 
 import Home from "./components/Home/Home";
 
