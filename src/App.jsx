@@ -9,6 +9,7 @@ import Explore from "./components/Explore/Explore";
 import About from "./components/About/About";
 import Testimonial from "./components/Testimonials/Testimonial";
 import Contact from "./components/Contact/contact";
+
 import Home from "./components/Home/Home";
 
 import DashboardLayout from "./components/HOC/DashboardLayout";
@@ -38,8 +39,8 @@ const App = () => {
         </Route>
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard/profile" element= {<Profile />} />
-          <Route path="/dashboard/skills" element= {<MySkills />} />
+          <Route path="/dashboard/profile" element={<Profile />} />
+          <Route path="/dashboard/skills" element={<MySkills />} />
           <Route path="/dashboard/explore" element={<Explores />} />
           <Route path="/dashboard/messages" element={<Message />} />
           <Route path="/dashboard/session" element={<MySessions />} />
