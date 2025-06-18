@@ -26,7 +26,7 @@ const Login = () => {
         toast.success("Login Successfull");
         action.resetForm();
         setTimeout(() => {
-          navigate("/");
+          navigate("/dashboard");
         }, 1500);
       },
     });
