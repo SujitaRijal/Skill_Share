@@ -1,24 +1,29 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Register from "./components/Registration/Register";
-import MainLayout from "./components/Layout/MainLayout";
-import AuthLayout from "./components/Layout/AuthLayout";
-import Hero from "./components/Hero/Hero";
+import AuthLayout from "./components/HOC/AuthLayout";
+import Register from "./pages/AuthPages/Register";
+import Login from "./pages/AuthPages/Login";
 import { Toaster } from "react-hot-toast";
-import Login from "./components/Login/Login";
+
+import MainLayout from "./components/HOC/MainLayout";
 import Explore from "./components/Explore/Explore";
 import About from "./components/About/About";
 import Testimonial from "./components/Testimonials/Testimonial";
 import Contact from "./components/Contact/contact";
-import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
+
+import DashboardLayout from "./components/HOC/DashboardLayout";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Profile from "./pages/UserPage/UserProfile";
+import MySkills from "./pages/SkillPage/Skill";
+import Explores from "./pages/ExplorePage/Explores";
+import Message from "./pages/MessagePage/Message";
+import MySessions from "./pages/MySessionPage/MySession";
 
 const App = () => {
   return (
     <>
       <Toaster positon="top-right" reverseOrder={false} />
       <Routes>
-        {/* //main layout-shows navbar,hero etc */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
@@ -30,6 +35,14 @@ const App = () => {
         <Route element={<AuthLayout />}>
           <Route path="/signup" element={<Register />} />
           <Route path="/login" element={<Login />} />
+        </Route>
+        <Route element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/profile" element= {<Profile />} />
+          <Route path="/dashboard/skills" element= {<MySkills />} />
+          <Route path="/dashboard/explore" element={<Explores />} />
+          <Route path="/dashboard/messages" element={<Message />} />
+          <Route path="/dashboard/session" element={<MySessions />} />
         </Route>
       </Routes>
     </>

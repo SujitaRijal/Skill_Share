@@ -55,7 +55,7 @@ const categories = [
   },
 ];
 
-const Explore = () => {
+const Explores = () => {
   const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
@@ -142,4 +142,4 @@ const Explore = () => {
   );
 };
 
-export default Explore;
+export default Explores;

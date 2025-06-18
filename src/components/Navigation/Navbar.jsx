@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X, Users } from "lucide-react";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
@@ -49,7 +49,7 @@ const Navbar = () => {
               className="flex items-center"
             >
               <Users className="w-6 h-6 text-purple-500" />
-              <span className="ml-3 text-xl font-bold text-">SKILL SHARE</span>
+              <span className="ml-3 text-xl font-bold text-black">SKILL SHARE</span>
             </motion.div>
           </Link>
 

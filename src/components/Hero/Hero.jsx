@@ -1,9 +1,8 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 import { UserCheck, Users } from "lucide-react";
-import Navbar from "../Navbar/Navbar";
+import Communication from "../../assets/images/business_communication.avif"
 
 const Hero = () => {
   return (
@@ -73,7 +72,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-300 to-purple-400"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <img
-                    src="https://img.freepik.com/free-vector/flat-design-business-communication-with-device_23-2149151733.jpg?ga=GA1.1.780795257.1716114933&semt=ais_hybrid&w=740"
+                    src={Communication}
                     alt="Learning"
                     className="object-cover w-full h-full opacity-30 mix-blend-overlay"
                   />

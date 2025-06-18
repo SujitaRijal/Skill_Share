@@ -124,10 +124,10 @@ const Login = () => {
               Remember Me
             </label>
             <Link
-              to="/forgetPassword"
+              to="/forgotPassword"
               className="text-purple-500 font-sm hover:underline"
             >
-              Forget Password
+              Forgot Password
             </Link>
           </div>
 
