@@ -8,7 +8,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 
 const Register = () => {
-  const apiUrl = import.meta.env.VITE_BACKEND_URL;
+  const apiUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:8081"; // Fallback to 8081
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -52,7 +52,12 @@ const Register = () => {
           contact_number: values.contact_number,
         };
 
-        await axios.post(`${apiUrl}/register`, payload);
+        const response = await axios.post(`${apiUrl}/register`, payload, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          timeout: 5000, // Add timeout to prevent hanging
+        });
 
         toast.success("Registered Successfully");
         resetForm();
@@ -60,8 +65,14 @@ const Register = () => {
           navigate("/login");
         }, 1500);
       } catch (error) {
-        console.error(error);
-        toast.error("Registration failed. Please try again.");
+        console.error("Registration error:", error);
+        if (error.code === "ERR_NETWORK") {
+          toast.error("Cannot connect to the backend. Please check if the server is running on port 8081.");
+        } else if (error.response) {
+          toast.error(`Registration failed: ${error.response.data.message || "Server error"}`);
+        } else {
+          toast.error("Registration failed. Please try again.");
+        }
       }
     },
   });
@@ -155,7 +166,6 @@ const Register = () => {
             </div>
           ))}
 
-          {/* Show/Hide Password Checkbox */}
           <div className="mb-4">
             <label className="inline-flex items-center cursor-pointer select-none">
               <input

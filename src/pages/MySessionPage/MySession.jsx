@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-// import { Tabs, Tab } from '@/components/ui/tab';
+import { useState } from 'react';
+import { Tabs } from "../../components/ui/tabs";
 import { Button } from '@/components/ui/button';
 
 const MySessions = () => {
@@ -88,15 +88,15 @@ const MySessions = () => {
     <div className="p-6 space-y-6">
       <h1 className="text-3xl font-bold">My Sessions</h1>
       <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <Tab label="📅 Upcoming" value="upcoming">
+        <Tabs label="Upcoming" value="upcoming">
           {renderUpcoming()}
-        </Tab>
-        <Tab label="✅ Completed" value="completed">
+        </Tabs>
+        <Tabs label="Completed" value="completed">
           {renderCompleted()}
-        </Tab>
-        <Tab label="📭 Requests" value="requests">
+        </Tabs>
+        <Tabs label="Requests" value="requests">
           {renderRequests()}
-        </Tab>
+        </Tabs>
       </Tabs>
     </div>
   );

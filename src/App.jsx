@@ -19,6 +19,7 @@ import MySkills from "./pages/SkillPage/Skill";
 import Explores from "./pages/ExplorePage/Explores";
 import Message from "./pages/MessagePage/Message";
 import MySessions from "./pages/MySessionPage/MySession";
+import UploadCV from "./pages/UploadCV/UploadCv.jsx";
 
 const App = () => {
   return (
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/dashboard/explore" element={<Explores />} />
           <Route path="/dashboard/messages" element={<Message />} />
           <Route path="/dashboard/session" element={<MySessions />} />
+          <Route path="/dashboard/upload-cv" element={<UploadCV />} />
         </Route>
       </Routes>
     </>
