@@ -19,7 +19,21 @@ import MySkills from "./pages/SkillPage/Skill";
 import Explores from "./pages/ExplorePage/Explores";
 import Message from "./pages/MessagePage/Message";
 import MySessions from "./pages/MySessionPage/MySession";
-import UploadCV from "./pages/UploadCV/UploadCv.jsx";
+import AdminDashoardLayout from "./components/HOC/AdminDashoardLayout.jsx";
+import Overview from "./pages/AdminDashboard/Overview.jsx";
+import Skills from "./pages/AdminDashboard/Skills.jsx";
+import Settings from "./pages/AdminDashboard/Settings.jsx";
+import Users from "./pages/AdminDashboard/Users.jsx";
+import Sessions from "./pages/AdminDashboard/Sessions.jsx";
+import Analytics from "./pages/AdminDashboard/Analytics.jsx";
+import UserDashboardHome from "./pages/Dashboard/UserDashboardHome.jsx";
+
+import UserFindSkills from "./pages/Dashboard/UserFindSkills.jsx";
+
+import UserInbox from "./pages/Dashboard/UserInbox.jsx";
+import UserMySessions from "./pages/Dashboard/UserMySessions.jsx";
+import UserProfile from "./pages/Dashboard/UserProfile.jsx";
+import UserSettings from "./pages/Dashboard/UserSettings.jsx";
 
 const App = () => {
   return (
@@ -38,15 +52,36 @@ const App = () => {
           <Route path="/signup" element={<Register />} />
           <Route path="/login" element={<Login />} />
         </Route>
-        <Route element={<DashboardLayout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<UserDashboardHome />} />
           <Route path="/dashboard/profile" element={<Profile />} />
           <Route path="/dashboard/skills" element={<MySkills />} />
           <Route path="/dashboard/explore" element={<Explores />} />
           <Route path="/dashboard/messages" element={<Message />} />
           <Route path="/dashboard/session" element={<MySessions />} />
-          <Route path="/dashboard/upload-cv" element={<UploadCV />} />
+        </Route> */}
+
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<UserDashboardHome />} />{" "}
+          {/* User's main dashboard view */}
+          <Route path="profile" element={<UserProfile />} />
+          <Route path="my-skills" element={<UserFindSkills />} />
+          {/* Add more user pages here as you create them */}
+          <Route path="my-sessions" element={<UserMySessions />} />
+          <Route path="find-skills" element={<UserFindSkills />} />
+          <Route path="inbox" element={<UserInbox />} />
+          <Route path="settings" element={<UserSettings />} />
         </Route>
+
+        <Route path="/admin" element={<AdminDashoardLayout />}>
+          <Route index element={<Overview />} />
+          <Route path="users" element={<Users />} />
+          <Route path="sessions" element={<Sessions />} />
+          <Route path="skills" element={<Skills />} />
+          <Route path="analytics" element={<Analytics />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+        <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
     </>
   );
