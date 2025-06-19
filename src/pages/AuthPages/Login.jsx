@@ -27,7 +27,7 @@ const Login = () => {
         action.resetForm();
         setTimeout(() => {
           navigate("/dashboard");
-        }, 1500);
+        });
       },
     });
   return (
