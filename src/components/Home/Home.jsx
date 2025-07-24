@@ -1,8 +1,9 @@
 import Hero from "../Hero/Hero";
 import About from "../About/About";
 import Explore from "../Explore/Explore";
-import Testimonial from "../Testimonials/Testimonial";
+// import Testimonial from "../Testimonials/Testimonial";
 import Contact from "../Contact/Contact";
+import CTASection from "../CTASection";
 
 const Home = () => {
   return (
@@ -10,8 +11,9 @@ const Home = () => {
       <Hero />
       <About />
       <Explore />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Contact />
+      <CTASection />
     </>
   );
 };

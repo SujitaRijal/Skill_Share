@@ -212,12 +212,12 @@ const UserProfile = () => {
               </span>
             ))}
           </div>
-          {isEditing && (
+          {/* {isEditing && (
             <p className="mt-4 text-sm text-gray-500">
               Note: Skill management (add/remove) would require separate UI
               elements.
             </p>
-          )}
+          )} */}
         </div>
       </div>
     </div>

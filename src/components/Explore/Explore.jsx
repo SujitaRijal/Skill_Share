@@ -71,7 +71,7 @@ const Explores = () => {
       >
         Why Choose{" "}
         <span className="font-light underline underline-offset-4 decoration-1 under">
-          SkillShare
+          Skill Share
         </span>
       </motion.h1>
       <motion.p
@@ -85,7 +85,7 @@ const Explores = () => {
         your journey.
       </motion.p>
 
-      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 ">
+      <div className="grid grid-cols-1 gap-10 px-16 md:grid-cols-2 lg:grid-cols-3">
         {categories.map((cat, i) => (
           <motion.div
             key={i}
@@ -109,7 +109,7 @@ const Explores = () => {
         ))}
       </div>
 
-      <div
+      {/* <div
         ref={ref}
         className="grid w-full grid-cols-1 gap-10 px-4 mx-auto mt-16 text-center max-w-7xl sm:grid-cols-3"
       >
@@ -137,7 +137,7 @@ const Explores = () => {
           </h3>
           <p className="text-gray-600">Expert Mentors</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
