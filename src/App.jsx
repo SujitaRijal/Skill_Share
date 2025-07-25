@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast";
 import MainLayout from "./components/HOC/MainLayout";
 import Explore from "./components/Explore/Explore";
 import About from "./components/About/About";
-import Testimonial from "./components/Testimonials/Testimonial";
+// import Testimonial from "./components/Testimonials/Testimonial";
 import Contact from "./components/Contact/Contact.jsx";
 
 import Home from "./components/Home/Home";
@@ -34,6 +34,7 @@ import UserInbox from "./pages/Dashboard/UserInbox.jsx";
 import UserMySessions from "./pages/Dashboard/UserMySessions.jsx";
 import UserProfile from "./pages/Dashboard/UserProfile.jsx";
 import UserSettings from "./pages/Dashboard/UserSettings.jsx";
+import UserMySkills from "./pages/Dashboard/UserMySkills.jsx";
 
 const App = () => {
   return (
@@ -44,7 +45,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Explore" element={<Explore />} />
-          <Route path="/Testimonials" element={<Testimonial />} />
+          {/* <Route path="/Testimonials" element={<Testimonial />} /> */}
           <Route path="/Contact" element={<Contact />} />
         </Route>
 
@@ -65,7 +66,7 @@ const App = () => {
           <Route index element={<UserDashboardHome />} />{" "}
           {/* User's main dashboard view */}
           <Route path="profile" element={<UserProfile />} />
-          <Route path="my-skills" element={<UserFindSkills />} />
+          <Route path="my-skills" element={<UserMySkills />} />
           {/* Add more user pages here as you create them */}
           <Route path="my-sessions" element={<UserMySessions />} />
           <Route path="find-skills" element={<UserFindSkills />} />
