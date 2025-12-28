@@ -192,7 +192,7 @@ const Contact = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          access_key: "b2a7ea81-1f3a-45da-8852-e40b8085dfbe", // Replace with actual key
+          access_key: "", // Replace with actual key
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
